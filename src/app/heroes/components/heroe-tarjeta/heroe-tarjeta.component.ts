@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Heroe } from '../../interfaces/heroes.interface';
-import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-heroe-tarjeta',
@@ -11,10 +10,8 @@ import { HeroesService } from '../../services/heroes.service';
   }
 `]
 })
-export class HeroeTarjetaComponent implements OnInit {
-  heroes: Heroe[] = [];
+export class HeroeTarjetaComponent {
 
-  constructor(private heroesService: HeroesService) { }
-  ngOnInit(): void { }
+  @Input() heroe!: Heroe;
 
 }
